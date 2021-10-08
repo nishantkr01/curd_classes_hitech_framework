@@ -47,7 +47,7 @@ if (isset($_POST['submit'])) {
         if ($saveFlag > 0) {
         ?>
             <script>
-                alert("Registerd Successfully");
+                alert("Updated Successfully");
 
                 window.location.href = "studentDetails.php";
             </script>
@@ -55,14 +55,12 @@ if (isset($_POST['submit'])) {
         } else {
         ?>
             <script>
-                alert("Registration Failed");
+                alert("Updated Failed");
             </script>
 <?php
         }
     }
-}
-
-else if (isset($_GET['id'])) {
+} else if (isset($_GET['id'])) {
     $firstName = $_GET['firstName'];
     $lastName = $_GET['lastName'];
     $email = $_GET['email'];
@@ -70,8 +68,8 @@ else if (isset($_GET['id'])) {
     $city = $_GET['city'];
     $message = $_GET['message'];
     $id = $_GET['id'];
-}else{
-    $firstName ="";
+} else {
+    $firstName = "";
     $lastName = "";
     $email = "";
     $phone = "";
@@ -112,6 +110,12 @@ else if (isset($_GET['id'])) {
             color: white;
             cursor: pointer;
         }
+
+        @media screen and (max-width: 992px) {
+            .custom-j  {
+                width: 100%!important;
+            }
+        }
     </style>
     <title>CONTACT FORM</title>
 </head>
@@ -122,6 +126,7 @@ else if (isset($_GET['id'])) {
             SIMPLE REGISTRATION FORM
         </div>
         <div class="mt-4 p-3 bg-white custom-j shadow-lg">
+        <a class="nav-link text-dark" href="studentDetails.php">Go to Registration Page</a>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <input type="hidden" name="id" value="<?php echo $id ?>">
                 <div>

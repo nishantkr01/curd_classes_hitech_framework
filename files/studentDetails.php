@@ -134,7 +134,7 @@ include_once("../classes/clsRegistrationManager.php");
 						</tbody>
 					</table>
 				</div>
-				<a class="link text-white" href="registration.php">Go to Registration Page</a>
+				<a class="nav-link text-white" href="registration.php">Go to Registration Page</a>
 			</div>
 		</div>
 	</div>
