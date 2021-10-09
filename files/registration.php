@@ -111,9 +111,9 @@ if (isset($_POST['submit'])) {
             cursor: pointer;
         }
 
-        @media screen and (max-width: 992px) {
-            .custom-j  {
-                width: 100%!important;
+        @media screen and (max-width: 1300px) {
+            .custom-j {
+                width: 100% !important;
             }
         }
     </style>
@@ -126,7 +126,7 @@ if (isset($_POST['submit'])) {
             SIMPLE REGISTRATION FORM
         </div>
         <div class="mt-4 p-3 bg-white custom-j shadow-lg">
-        <a class="nav-link text-dark" href="studentDetails.php">Go to Registration Page</a>
+            <a class="nav-link text-dark" href="studentDetails.php">Go to Registration Page</a>
             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                 <input type="hidden" name="id" value="<?php echo $id ?>">
                 <div>

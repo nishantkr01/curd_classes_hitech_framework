@@ -117,7 +117,7 @@ include_once("../classes/clsRegistrationManager.php");
 
 											<form method="get" class="d-inline">
 												<input type="hidden" name="deleteId" value="<?php echo $id; ?>">
-												<input type='submit' class='btn btn-default' onclick="return checkdelete()"name='btnDelete' value="Delete" style="background:#e84646; cursor: pointer;">
+												<input type='submit' class='btn btn-default' onclick="return checkdelete()" name='btnDelete' value="Delete" style="background:#e84646; cursor: pointer;">
 											</form>
 										</td>
 									</tr>

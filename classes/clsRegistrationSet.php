@@ -10,9 +10,9 @@
 //	Purpose of Modification:   
 
 include_once("clsRegistration.php");
- 
+
 class clsRegistrationSet
-{ 
+{
 	var $aRegistration = array();
 	function Add($obj)
 	{
@@ -25,8 +25,7 @@ class clsRegistrationSet
 	function GetItem($lIndex)
 	{
 		$lLastEntry = $this->GetCount();
-		if($lIndex < 0 || $lIndex > $lLastEntry-1)
-		{
+		if ($lIndex < 0 || $lIndex > $lLastEntry - 1) {
 			echo " MyError: Illegal index Passed to  clsRegistrationSet:GetItem()";
 			exit;
 		}
@@ -35,16 +34,13 @@ class clsRegistrationSet
 	function Remove($lIndex)
 	{
 		$lLastEntry = $this->GetCount();
-		if($lIndex < 0 || $lIndex > $lLastEntry-1)
-		{
+		if ($lIndex < 0 || $lIndex > $lLastEntry - 1) {
 			echo " MyError: Illegal index Passed to  clsRegistrationSet:Remove()";
 			exit;
 		}
-		for($i = $lIndex; $i < $lLastEntry; $i++)
-		{
-			$this->aRegistration[$i] = $this->aRegistration[$i+1];
+		for ($i = $lIndex; $i < $lLastEntry; $i++) {
+			$this->aRegistration[$i] = $this->aRegistration[$i + 1];
 		}
 		array_pop($this->aRegistration);
 	}
 }
-?>

@@ -58,101 +58,101 @@ class clsRegistrationManager
 		return $lNumTuples;
 	}
 
-// 	function SaveUserCategorySet($objRegistrationSet, $myConn = null)
-// 	{
-// 		$objRegistration = new clsRegistration();
-// 		$lNumRecord = $objRegistrationSet->GetCount();
-// 		$lTotalTuples = 0;
-// 		if (is_resource($myConn) and get_resource_type($myConn) == 'pgsql link') {
-// 			for ($lCount = 0; $lCount < $lNumRecord; $lCount++) {
-// 				$objRegistration = new clsRegistration();
-// 				$objRegistration = $objRegistrationSet->GetItem($lCount);
+	// 	function SaveUserCategorySet($objRegistrationSet, $myConn = null)
+	// 	{
+	// 		$objRegistration = new clsRegistration();
+	// 		$lNumRecord = $objRegistrationSet->GetCount();
+	// 		$lTotalTuples = 0;
+	// 		if (is_resource($myConn) and get_resource_type($myConn) == 'pgsql link') {
+	// 			for ($lCount = 0; $lCount < $lNumRecord; $lCount++) {
+	// 				$objRegistration = new clsRegistration();
+	// 				$objRegistration = $objRegistrationSet->GetItem($lCount);
 
-// 				$lCompanyID = $objRegistration->getCompanyID();
-// 				$bIsActive = $objRegistration->getIsActive();
-// 				$sUserCatName = $objRegistration->getUserCatName();
-// 				$sUserCatShtName = $objRegistration->getUserCatShtName();
-// 				$lUserID = $objRegistration->getUserID();
+	// 				$lCompanyID = $objRegistration->getCompanyID();
+	// 				$bIsActive = $objRegistration->getIsActive();
+	// 				$sUserCatName = $objRegistration->getUserCatName();
+	// 				$sUserCatShtName = $objRegistration->getUserCatShtName();
+	// 				$lUserID = $objRegistration->getUserID();
 
-// 				if ($lCompanyID == null)
-// 					$lCompanyID = 'null';
+	// 				if ($lCompanyID == null)
+	// 					$lCompanyID = 'null';
 
-// 				if ($bIsActive == null)
-// 					$bIsActive = 'null';
-// 				else
-// 					$bIsActive = "'$bIsActive'";
+	// 				if ($bIsActive == null)
+	// 					$bIsActive = 'null';
+	// 				else
+	// 					$bIsActive = "'$bIsActive'";
 
-// 				if ($lUserCatID == null)
-// 					$lUserCatID = 'null';
+	// 				if ($lUserCatID == null)
+	// 					$lUserCatID = 'null';
 
-// 				if ($sUserCatName == null)
-// 					$sUserCatName = 'null';
-// 				else
-// 					$sUserCatName = "'$sUserCatName'";
+	// 				if ($sUserCatName == null)
+	// 					$sUserCatName = 'null';
+	// 				else
+	// 					$sUserCatName = "'$sUserCatName'";
 
-// 				if ($sUserCatShtName == null)
-// 					$sUserCatShtName = 'null';
-// 				else
-// 					$sUserCatShtName = "'$sUserCatShtName'";
+	// 				if ($sUserCatShtName == null)
+	// 					$sUserCatShtName = 'null';
+	// 				else
+	// 					$sUserCatShtName = "'$sUserCatShtName'";
 
-// 				if ($lUserID == null)
-// 					$lUserID = 'null';
-// 				$sQuery = "insert into usercategory(companyid,isactive,usercatname,usercatshtname,userid) values ($lCompanyID,$bIsActive,$sUserCatName,$sUserCatShtName,$lUserID)";
-// 				$rsltUserCategory = pg_exec($myConn, $sQuery) or die("Couldn't execute query in clsRegistrationManager:SaveUserCategorySet");
-// 				$lNumTuples = pg_cmdtuples($rsltUserCategory);
-// 				if ($lNumTuples != 0) {
-// 					$lTotalTuples = $lTotalTuples + 1;
-// 				}
-// 			}
-// 		} else {
-// 			//global $DOCUMENT_ROOT;
-// 			include("../dbconnect.php");
-// 			pg_exec($connection, 'begin');
-// 			for ($lCount = 0; $lCount < $lNumRecord; $lCount++) {
-// 				$objRegistration = new clsRegistration();
-// 				$objRegistration = $objRegistrationSet->GetItem($lCount);
+	// 				if ($lUserID == null)
+	// 					$lUserID = 'null';
+	// 				$sQuery = "insert into usercategory(companyid,isactive,usercatname,usercatshtname,userid) values ($lCompanyID,$bIsActive,$sUserCatName,$sUserCatShtName,$lUserID)";
+	// 				$rsltUserCategory = pg_exec($myConn, $sQuery) or die("Couldn't execute query in clsRegistrationManager:SaveUserCategorySet");
+	// 				$lNumTuples = pg_cmdtuples($rsltUserCategory);
+	// 				if ($lNumTuples != 0) {
+	// 					$lTotalTuples = $lTotalTuples + 1;
+	// 				}
+	// 			}
+	// 		} else {
+	// 			//global $DOCUMENT_ROOT;
+	// 			include("../dbconnect.php");
+	// 			pg_exec($connection, 'begin');
+	// 			for ($lCount = 0; $lCount < $lNumRecord; $lCount++) {
+	// 				$objRegistration = new clsRegistration();
+	// 				$objRegistration = $objRegistrationSet->GetItem($lCount);
 
-// 				$lCompanyID = $objRegistration->getCompanyID();
-// 				$bIsActive = $objRegistration->getIsActive();
-// 				$sUserCatName = $objRegistration->getUserCatName();
-// 				$sUserCatShtName = $objRegistration->getUserCatShtName();
-// 				$lUserID = $objRegistration->getUserID();
+	// 				$lCompanyID = $objRegistration->getCompanyID();
+	// 				$bIsActive = $objRegistration->getIsActive();
+	// 				$sUserCatName = $objRegistration->getUserCatName();
+	// 				$sUserCatShtName = $objRegistration->getUserCatShtName();
+	// 				$lUserID = $objRegistration->getUserID();
 
-// 				if ($lCompanyID == null)
-// 					$lCompanyID = 'null';
+	// 				if ($lCompanyID == null)
+	// 					$lCompanyID = 'null';
 
-// 				if ($bIsActive == null)
-// 					$bIsActive = 'null';
-// 				else
-// 					$bIsActive = "'$bIsActive'";
+	// 				if ($bIsActive == null)
+	// 					$bIsActive = 'null';
+	// 				else
+	// 					$bIsActive = "'$bIsActive'";
 
-// 				if ($lUserCatID == null)
-// 					$lUserCatID = 'null';
+	// 				if ($lUserCatID == null)
+	// 					$lUserCatID = 'null';
 
-// 				if ($sUserCatName == null)
-// 					$sUserCatName = 'null';
-// 				else
-// 					$sUserCatName = "'$sUserCatName'";
+	// 				if ($sUserCatName == null)
+	// 					$sUserCatName = 'null';
+	// 				else
+	// 					$sUserCatName = "'$sUserCatName'";
 
-// 				if ($sUserCatShtName == null)
-// 					$sUserCatShtName = 'null';
-// 				else
-// 					$sUserCatShtName = "'$sUserCatShtName'";
+	// 				if ($sUserCatShtName == null)
+	// 					$sUserCatShtName = 'null';
+	// 				else
+	// 					$sUserCatShtName = "'$sUserCatShtName'";
 
-// 				if ($lUserID == null)
-// 					$lUserID = 'null';
-// 				$sQuery = "insert into usercategory(companyid,isactive,usercatname,usercatshtname,userid) values ($lCompanyID,$bIsActive,$sUserCatName,$sUserCatShtName,$lUserID)";
-// 				$rsltUserCategory = pg_exec($connection, $sQuery) or die("Couldn't execute query in clsRegistrationManager:SaveUserCategorySet");
-// 				$lNumTuples = pg_cmdtuples($rsltUserCategory);
-// 				if ($lNumTuples != 0) {
-// 					$lTotalTuples = $lTotalTuples + 1;
-// 				}
-// 			}
-// 			pg_exec($connection, 'commit');
-// 			pg_close();
-// 		}
-// 		return $lTotalTuples;
-// 	}
+	// 				if ($lUserID == null)
+	// 					$lUserID = 'null';
+	// 				$sQuery = "insert into usercategory(companyid,isactive,usercatname,usercatshtname,userid) values ($lCompanyID,$bIsActive,$sUserCatName,$sUserCatShtName,$lUserID)";
+	// 				$rsltUserCategory = pg_exec($connection, $sQuery) or die("Couldn't execute query in clsRegistrationManager:SaveUserCategorySet");
+	// 				$lNumTuples = pg_cmdtuples($rsltUserCategory);
+	// 				if ($lNumTuples != 0) {
+	// 					$lTotalTuples = $lTotalTuples + 1;
+	// 				}
+	// 			}
+	// 			pg_exec($connection, 'commit');
+	// 			pg_close();
+	// 		}
+	// 		return $lTotalTuples;
+	// 	}
 
 	function RetrieveRegistrationSet($sQuery)
 	{
@@ -200,17 +200,17 @@ class clsRegistrationManager
 	// 		pg_close();
 	// 		return null;
 	// 	}
-		// $arrRegistration = pg_fetch_array($rsltRegistration, 0);
-		// $objRegistration->setId($arrRegistration['id']);
-		// $objRegistration->setFirstName($arrRegistration['firstname']);
-		// $objRegistration->setlastName($arrRegistration['lastname']);
-		// $objRegistration->setEmail($arrRegistration['email']);
-		// $objRegistration->setPhone($arrRegistration['phone']);
-		// $objRegistration->setCity($arrRegistration['city']);
-		// $objRegistration->setMessage($arrRegistration['message']);
+	// $arrRegistration = pg_fetch_array($rsltRegistration, 0);
+	// $objRegistration->setId($arrRegistration['id']);
+	// $objRegistration->setFirstName($arrRegistration['firstname']);
+	// $objRegistration->setlastName($arrRegistration['lastname']);
+	// $objRegistration->setEmail($arrRegistration['email']);
+	// $objRegistration->setPhone($arrRegistration['phone']);
+	// $objRegistration->setCity($arrRegistration['city']);
+	// $objRegistration->setMessage($arrRegistration['message']);
 
 	// 	$objRegistrationSet->Add($objRegistration);
-	
+
 	// 	pg_close();
 	// 	return $objRegistration;
 	// }
@@ -246,7 +246,7 @@ class clsRegistrationManager
 
 		if ($city == null)
 			$city = 'null';
-		
+
 		if ($message == null)
 			$message = 'null';
 
@@ -271,116 +271,116 @@ class clsRegistrationManager
 		}
 		return $lNumTuples;
 	}
-// 	function UpdateUserCategorySet($objRegistrationSet, $myConn = null)
-// 	{
-// 		$objRegistration = new clsRegistration();
-// 		$lNumRecord = $objRegistrationSet->GetCount();
-// 		$lTotalTuples = 0;
-// 		if (is_resource($myConn) and get_resource_type($myConn) == 'pgsql link') {
-// 			for ($lCount = 0; $lCount < $lNumRecord; $lCount++) {
-// 				$objRegistration = new clsRegistration();
-// 				$objRegistration = $objRegistrationSet->GetItem($lCount);
+	// 	function UpdateUserCategorySet($objRegistrationSet, $myConn = null)
+	// 	{
+	// 		$objRegistration = new clsRegistration();
+	// 		$lNumRecord = $objRegistrationSet->GetCount();
+	// 		$lTotalTuples = 0;
+	// 		if (is_resource($myConn) and get_resource_type($myConn) == 'pgsql link') {
+	// 			for ($lCount = 0; $lCount < $lNumRecord; $lCount++) {
+	// 				$objRegistration = new clsRegistration();
+	// 				$objRegistration = $objRegistrationSet->GetItem($lCount);
 
-// 				$lCompanyID = $objRegistration->getCompanyID();
-// 				$bIsActive = $objRegistration->getIsActive();
-// 				$lUserCatID = $objRegistration->getUserCatID();
-// 				$sUserCatName = $objRegistration->getUserCatName();
-// 				$sUserCatShtName = $objRegistration->getUserCatShtName();
-// 				$lUserID = $objRegistration->getUserID();
+	// 				$lCompanyID = $objRegistration->getCompanyID();
+	// 				$bIsActive = $objRegistration->getIsActive();
+	// 				$lUserCatID = $objRegistration->getUserCatID();
+	// 				$sUserCatName = $objRegistration->getUserCatName();
+	// 				$sUserCatShtName = $objRegistration->getUserCatShtName();
+	// 				$lUserID = $objRegistration->getUserID();
 
-// 				if ($lCompanyID == null)
-// 					$lCompanyID = 'null';
+	// 				if ($lCompanyID == null)
+	// 					$lCompanyID = 'null';
 
-// 				if ($bIsActive == null)
-// 					$bIsActive = 'null';
-// 				else
-// 					$bIsActive = "'$bIsActive'";
+	// 				if ($bIsActive == null)
+	// 					$bIsActive = 'null';
+	// 				else
+	// 					$bIsActive = "'$bIsActive'";
 
-// 				if ($lUserCatID == null)
-// 					$lUserCatID = 'null';
+	// 				if ($lUserCatID == null)
+	// 					$lUserCatID = 'null';
 
-// 				if ($sUserCatName == null)
-// 					$sUserCatName = 'null';
-// 				else
-// 					$sUserCatName = "'$sUserCatName'";
+	// 				if ($sUserCatName == null)
+	// 					$sUserCatName = 'null';
+	// 				else
+	// 					$sUserCatName = "'$sUserCatName'";
 
-// 				if ($sUserCatShtName == null)
-// 					$sUserCatShtName = 'null';
-// 				else
-// 					$sUserCatShtName = "'$sUserCatShtName'";
+	// 				if ($sUserCatShtName == null)
+	// 					$sUserCatShtName = 'null';
+	// 				else
+	// 					$sUserCatShtName = "'$sUserCatShtName'";
 
-// 				if ($lUserID == null)
-// 					$lUserID = 'null';
+	// 				if ($lUserID == null)
+	// 					$lUserID = 'null';
 
-// 				$sQuery = "update usercategory set
-// 				companyid=$lCompanyID,
-// 				isactive=$bIsActive,
-// 				usercatname=$sUserCatName,
-// 				usercatshtname=$sUserCatShtName,
-// 				userid=$lUserID
-// 				where usercatid=$lUserCatID";
-// 				$rsltUserCategory = pg_exec($myConn, $sQuery) or die("Couldn't execute query in clsRegistrationManager:UpdateUserCategorySet");
-// 				$lNumTuples = pg_cmdtuples($rsltUserCategory);
-// 				if ($lNumTuples != 0) {
-// 					$lTotalTuples = $lTotalTuples + 1;
-// 				}
-// 			}
-// 		} else {
-// 			//global $DOCUMENT_ROOT;
-// 			include("../dbconnect.php");
-// 			pg_exec($connection, 'begin');
-// 			for ($lCount = 0; $lCount < $lNumRecord; $lCount++) {
-// 				$objRegistration = new clsRegistration();
-// 				$objRegistration = $objRegistrationSet->GetItem($lCount);
+	// 				$sQuery = "update usercategory set
+	// 				companyid=$lCompanyID,
+	// 				isactive=$bIsActive,
+	// 				usercatname=$sUserCatName,
+	// 				usercatshtname=$sUserCatShtName,
+	// 				userid=$lUserID
+	// 				where usercatid=$lUserCatID";
+	// 				$rsltUserCategory = pg_exec($myConn, $sQuery) or die("Couldn't execute query in clsRegistrationManager:UpdateUserCategorySet");
+	// 				$lNumTuples = pg_cmdtuples($rsltUserCategory);
+	// 				if ($lNumTuples != 0) {
+	// 					$lTotalTuples = $lTotalTuples + 1;
+	// 				}
+	// 			}
+	// 		} else {
+	// 			//global $DOCUMENT_ROOT;
+	// 			include("../dbconnect.php");
+	// 			pg_exec($connection, 'begin');
+	// 			for ($lCount = 0; $lCount < $lNumRecord; $lCount++) {
+	// 				$objRegistration = new clsRegistration();
+	// 				$objRegistration = $objRegistrationSet->GetItem($lCount);
 
-// 				$lCompanyID = $objRegistration->getCompanyID();
-// 				$bIsActive = $objRegistration->getIsActive();
-// 				$lUserCatID = $objRegistration->getUserCatID();
-// 				$sUserCatName = $objRegistration->getUserCatName();
-// 				$sUserCatShtName = $objRegistration->getUserCatShtName();
-// 				$lUserID = $objRegistration->getUserID();
+	// 				$lCompanyID = $objRegistration->getCompanyID();
+	// 				$bIsActive = $objRegistration->getIsActive();
+	// 				$lUserCatID = $objRegistration->getUserCatID();
+	// 				$sUserCatName = $objRegistration->getUserCatName();
+	// 				$sUserCatShtName = $objRegistration->getUserCatShtName();
+	// 				$lUserID = $objRegistration->getUserID();
 
-// 				if ($lCompanyID == null)
-// 					$lCompanyID = 'null';
+	// 				if ($lCompanyID == null)
+	// 					$lCompanyID = 'null';
 
-// 				if ($bIsActive == null)
-// 					$bIsActive = 'null';
-// 				else
-// 					$bIsActive = "'$bIsActive'";
+	// 				if ($bIsActive == null)
+	// 					$bIsActive = 'null';
+	// 				else
+	// 					$bIsActive = "'$bIsActive'";
 
-// 				if ($lUserCatID == null)
-// 					$lUserCatID = 'null';
+	// 				if ($lUserCatID == null)
+	// 					$lUserCatID = 'null';
 
-// 				if ($sUserCatName == null)
-// 					$sUserCatName = 'null';
-// 				else
-// 					$sUserCatName = "'$sUserCatName'";
+	// 				if ($sUserCatName == null)
+	// 					$sUserCatName = 'null';
+	// 				else
+	// 					$sUserCatName = "'$sUserCatName'";
 
-// 				if ($sUserCatShtName == null)
-// 					$sUserCatShtName = 'null';
-// 				else
-// 					$sUserCatShtName = "'$sUserCatShtName'";
+	// 				if ($sUserCatShtName == null)
+	// 					$sUserCatShtName = 'null';
+	// 				else
+	// 					$sUserCatShtName = "'$sUserCatShtName'";
 
-// 				if ($lUserID == null)
-// 					$lUserID = 'null';
-// 				$sQuery = "update usercategory set
-// 				companyid=$lCompanyID,
-// 				isactive=$bIsActive,
-// 				usercatname=$sUserCatName,
-// 				usercatshtname=$sUserCatShtName,
-// 				userid=$lUserID
-// 				where usercatid=$lUserCatID";
-// 				$rsltUserCategory = pg_exec($connection, $sQuery) or die("Couldn't execute query in clsRegistrationManager:UpdateUserCategorySet");
-// 				$lNumTuples = pg_cmdtuples($rsltUserCategory);
-// 				if ($lNumTuples != 0) {
-// 					$lTotalTuples = $lTotalTuples + 1;
-// 				}
-// 			}
-// 			pg_exec($connection, 'commit');
-// 			pg_close();
-// 		}
-// 		return $lTotalTuples;
-// 	}
+	// 				if ($lUserID == null)
+	// 					$lUserID = 'null';
+	// 				$sQuery = "update usercategory set
+	// 				companyid=$lCompanyID,
+	// 				isactive=$bIsActive,
+	// 				usercatname=$sUserCatName,
+	// 				usercatshtname=$sUserCatShtName,
+	// 				userid=$lUserID
+	// 				where usercatid=$lUserCatID";
+	// 				$rsltUserCategory = pg_exec($connection, $sQuery) or die("Couldn't execute query in clsRegistrationManager:UpdateUserCategorySet");
+	// 				$lNumTuples = pg_cmdtuples($rsltUserCategory);
+	// 				if ($lNumTuples != 0) {
+	// 					$lTotalTuples = $lTotalTuples + 1;
+	// 				}
+	// 			}
+	// 			pg_exec($connection, 'commit');
+	// 			pg_close();
+	// 		}
+	// 		return $lTotalTuples;
+	// 	}
 
 	function DeleteRegistration($obj, $myConn = null)
 	{
@@ -406,5 +406,5 @@ class clsRegistrationManager
 		}
 		return $lNumTuples;
 	}
-// 
+	// 
 }
