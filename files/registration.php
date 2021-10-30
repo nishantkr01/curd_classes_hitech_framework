@@ -90,6 +90,10 @@ if (isset($_POST['submit'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <noscript><h3> You must have JavaScript enabled in order to use this order form. Please 
+      enable JavaScript and then reload this page in order to continue. </h3> 
+      <meta HTTP-EQUIV="refresh" content=0;url="registration.php"></noscript>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -126,6 +130,8 @@ if (isset($_POST['submit'])) {
 <!-- validation -->
 <script>  
 
+
+
 function validateform(){  
 var firstName=document.myform.firstName.value;  
 var lastName=document.myform.lastName.value;  
@@ -133,9 +139,11 @@ var email=document.myform.email.value;
 var phone=document.myform.phone.value;  
 var city=document.myform.city.value;  
 var message=document.myform.message.value;  
-  
+ 
+
 if (firstName==null || firstName==""){  
-  alert("first Name can't be blank");  
+  alert("first Name can't be blank"); 
+
   return false;  
 } else if (lastName==null || lastName==""){  
   alert("lastName  can't be blank");  
