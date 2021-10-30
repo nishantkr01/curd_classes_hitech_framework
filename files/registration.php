@@ -121,13 +121,52 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
+
+
+<!-- validation -->
+<script>  
+
+function validateform(){  
+var firstName=document.myform.firstName.value;  
+var lastName=document.myform.lastName.value;  
+var email=document.myform.email.value;  
+var phone=document.myform.phone.value;  
+var city=document.myform.city.value;  
+var message=document.myform.message.value;  
+  
+if (firstName==null || firstName==""){  
+  alert("first Name can't be blank");  
+  return false;  
+} else if (lastName==null || lastName==""){  
+  alert("lastName  can't be blank");  
+  return false;  
+} else if (email==null || email==""){  
+  alert("email can't be blank");  
+  return false;  
+} else if (phone==null || phone==""){  
+  alert("phone can't be blank");  
+  return false;  
+} else if (city==null || city==""){  
+  alert("city Name can't be blank");  
+  return false;  
+}else if (message==null || message==""){  
+  alert("message can't be blank");  
+  return false;  
+}
+
+}  
+</script>
+<!-- validation -->
+
+
+
     <div class="container">
         <div class="fs-2 mt-3 text-center text-white">
             SIMPLE REGISTRATION FORM
         </div>
         <div class="mt-4 p-3 bg-white custom-j shadow-lg">
             <a class="nav-link text-dark" href="studentDetails.php">Go to Registration Page</a>
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <form  name="myform" method="post"  onsubmit="return validateform()" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <input type="hidden" name="id" value="<?php echo $id ?>">
                 <div>
                     <label style="color: orangered">FIRST NAME</label><br>
